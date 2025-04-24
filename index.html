@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/indexStyle.css">
     
     
-    
+    <!-- board랑 index_js scriptURL 같이 수정해야함 -->
 
 </head>
 <body>
@@ -31,7 +31,10 @@
         </div>
     </header>
 
+
+
     <!-- 메인 비주얼 -->
+     <!-- 배너이미지는 스타일에서 수정 -->
     <section class="main-visual">
         <div class="container">
             <h1>초중등 전문 영어/수학 학원</h1>
@@ -168,7 +171,7 @@
     </section>
 
     <!-- 공지사항 -->
-    <section class="notice-section" id="notice">
+
         <div class="container">
             <h2 class="section-title">학원 소식</h2>
             <div class="notice-list">
@@ -198,25 +201,232 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <section id="latestPostsSection">
+        <h2>공지사항</h2>
+        <table id="latestPostsTable">
+          <tbody></tbody>
+        </table>
+        <div style="text-align: right; margin-top: 10px;">
+          <a href="board.html" class="more-button">더보기 &raquo;</a>
+        </div>
+      </section>
+      
+      <style>
+        #latestPostsSection {
+          padding: 2rem;
+          background: linear-gradient(145deg, #fff9f9, #fff0f5);
+          border-radius: 20px;
+          box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+          margin: 40px auto;
+          max-width: 860px;
+          font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+          border: 1px solid #ffebee;
+          position: relative;
+          overflow: hidden;
+        }
+      
+        #latestPostsSection::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 8px;
+          background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+        }
+      
+        #latestPostsSection h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: #ff758c;
+          font-weight: 800;
+          padding-left: 16px;
+          position: relative;
+          display: inline-block;
+        }
+      
+        #latestPostsSection h2::before {
+          content: "✨";
+          position: absolute;
+          left: -10px;
+          top: -10px;
+          font-size: 1.2rem;
+        }
+      
+        #latestPostsSection h2::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          left: 16px;
+          width: 50px;
+          height: 4px;
+          background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+          border-radius: 2px;
+        }
+      
+        #latestPostsTable {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0 8px;
+        }
+      
+        #latestPostsTable tr.post-title {
+          background-color: #ffffff;
+          transition: all 0.3s ease;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(255, 182, 193, 0.1);
+        }
+      
+        #latestPostsTable tr.post-title:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(255, 182, 193, 0.2);
+          background-color: #fff9fb;
+        }
+      
+        #latestPostsTable td {
+          padding: 1.2rem;
+          font-size: 1.05rem;
+          position: relative;
+        }
+      
+        #latestPostsTable td:first-child {
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+        }
+      
+        #latestPostsTable td:last-child {
+          border-top-right-radius: 12px;
+          border-bottom-right-radius: 12px;
+        }
+      
+        #latestPostsTable td.title {
+          font-weight: 600;
+          color: #ff758c;
+          padding-left: 20px;
+        }
+      
+        #latestPostsTable td.title::before {
+          content: "•";
+          color: #ff9a9e;
+          position: absolute;
+          left: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+        }
+      
+        #latestPostsTable td.date {
+          color: #ffb7c5;
+          font-size: 0.9rem;
+          white-space: nowrap;
+          text-align: right;
+          font-weight: 500;
+        }
+      
+        .post-content td {
+          background: #fff9fb;
+          padding: 1.5rem;
+          font-size: 1rem;
+          color: #ff758c;
+          line-height: 1.7;
+          border-radius: 12px;
+          box-shadow: inset 0 0 0 1px #ffebee;
+        }
+      
+        .more-button {
+          margin-top: 1.5rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 12px 24px;
+          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+          color: white;
+          border-radius: 50px;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
+          border: none;
+        }
+      
+        .more-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 154, 158, 0.4);
+          background: linear-gradient(135deg, #ff8a9e, #fad0c4);
+        }
+      
+        .more-button::after {
+          content: "→";
+          transition: transform 0.3s ease;
+        }
+      
+        .more-button:hover::after {
+          transform: translateX(3px);
+        }
+      
+        /* ✅ 반응형 스타일 */
+        @media (max-width: 768px) {
+          #latestPostsSection {
+            padding: 1.5rem;
+            margin: 20px 12px;
+            border-radius: 16px;
+          }
+      
+          #latestPostsSection h2 {
+            font-size: 1.5rem;
+            padding-left: 14px;
+          }
+      
+          #latestPostsTable td {
+            font-size: 0.95rem;
+            padding: 1rem;
+          }
+      
+          #latestPostsTable td.title::before {
+            left: 6px;
+          }
+      
+          #latestPostsTable td.date {
+            text-align: left;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: block;
+            color: #ff9a9e;
+          }
+      
+          .post-content td {
+            font-size: 0.92rem;
+            padding: 1.2rem;
+          }
+      
+          .more-button {
+            font-size: 0.9rem;
+            padding: 10px 20px;
+          }
+        }
+      </style>
+    
 
+    
     <!-- 문의하기 -->
     <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="section-title">문의하기</h2>
             <div class="contact-form">
-                <form>
+                <form id="inquiryForm">
                     <div class="form-group">
                         <label for="name">이름</label>
-                        <input type="text" id="name" placeholder="이름을 입력해주세요">
+                        <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">연락처</label>
-                        <input type="tel" id="phone" placeholder="연락처를 입력해주세요">
+                        <input type="tel" id="phone" name="phone" placeholder="연락처를 입력해주세요" required>
                     </div>
                     <div class="form-group">
                         <label for="student">학생 학년</label>
-                        <select id="student">
+                        <select id="student" name="student" required>
                             <option value="">학년을 선택해주세요</option>
                             <option value="초등1">초등 1학년</option>
                             <option value="초등2">초등 2학년</option>
@@ -231,7 +441,7 @@
                     </div>
                     <div class="form-group">
                         <label for="interest">관심 과목</label>
-                        <select id="interest">
+                        <select id="interest" name="interest" required>
                             <option value="">과목을 선택해주세요</option>
                             <option value="초등영어">초등 영어</option>
                             <option value="초등수학">초등 수학</option>
@@ -242,13 +452,65 @@
                     </div>
                     <div class="form-group">
                         <label for="message">문의 내용</label>
-                        <textarea id="message" placeholder="문의 내용을 입력해주세요"></textarea>
+                        <textarea id="message" name="message" placeholder="문의 내용을 입력해주세요" required></textarea>
                     </div>
                     <button type="submit" class="btn">문의하기</button>
                 </form>
             </div>
         </div>
     </section>
+
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyZOKq9jtYpEMQy0_jNfUATEBp7t9GDr4OCxMc9VMCKapB58eCeNOU0tPuFCCBxDq5XWQ/exec';
+
+        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
+    submitBtn.disabled = true;
+    
+    try {
+        const formData = new FormData(form);
+        const response = await fetch(scriptURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                action: 'contact',
+                parameter: Object.fromEntries(formData)
+            })
+        });
+
+        if (!response.ok) throw new Error(`HTTP 오류: ${response.status}`);
+        
+        const data = await response.json();
+        console.log("서버 응답:", data);
+        
+        if (data.result === 'success') {
+            alert('문의가 성공적으로 접수되었습니다!');
+            form.reset();
+        } else {
+            throw new Error(data.error || '서버에서 오류 발생');
+        }
+    } catch (error) {
+        console.error('제출 오류:', error);
+        alert(`문의 제출 실패: ${error.message}`);
+    } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+});
+    </script>
+
+
+
+
 
     <!-- 푸터 -->
     <footer>

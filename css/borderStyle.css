@@ -53,11 +53,11 @@
 }
 
 .btn-primary {
-        /* 버튼 배경색 !impor 해줘야함 */
+    /* 버튼 배경색 !impor 해줘야함 */
     background-color: pink !important;
     /* 버튼 글쓰기 텍스트 색 */
     color: rgb(255, 255, 255) !important;
-    border:none !important;
+    border: none !important;
 }
 
 .btn-primary:hover {
@@ -207,63 +207,75 @@ textarea.form-control {
     color: white;
     border-color: var(--primary-color);
 }
-    /* CSS 추가 */
-    .post-table-container {
-        width: 100%;
-        overflow-x: auto;
-        margin-bottom: 20px;
-    }
-    
-    .post-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 14px;
-        border-top: 2px solid #333;
-    }
-    
-    .post-table th, .post-table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #e0e0e0;
-        text-align: center;
-    }
-    
-    .post-table th {
-        background-color: #f8f9fa;
-        font-weight: 500;
-        color: #555;
-    }
-    
-    .post-table td {
-        color: #333;
-    }
-    
-    .post-table .num { width: 10%; }
-    .post-table .title { 
-        width: 60%; 
-        text-align: left;
-        padding-left: 15px;
-    }
-    .post-table .author { width: 15%; }
-    .post-table .date { width: 15%; }
-    
-    .post-table tbody tr:hover {
-        background-color: #f5f5f5;
-    }
-    
-    .title a {
-        color: #333;
-        text-decoration: none;
-        display: inline-block;
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    
-    .title a:hover {
-        text-decoration: underline;
-        color: #2b7de9;
-    }
+
+/* CSS 추가 */
+.post-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.post-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-top: 2px solid #333;
+}
+
+.post-table th,
+.post-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.post-table th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+    color: #555;
+}
+
+.post-table td {
+    color: #333;
+}
+
+.post-table .num {
+    width: 10%;
+}
+
+.post-table .title {
+    width: 60%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.post-table .author {
+    width: 15%;
+}
+
+.post-table .date {
+    width: 15%;
+}
+
+.post-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.title a {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title a:hover {
+    text-decoration: underline;
+    color: #2b7de9;
+}
+
 /* 게시판 탭 스타일 */
 .board-tabs {
     display: flex;
@@ -284,12 +296,12 @@ textarea.form-control {
 
 .tab-btn:hover {
     /* color: var(--primary-color); */
-    color:pink !important;
+    color: pink !important;
 }
 
 .tab-btn.active {
     /* color: var(--primary-color); */
-    color:rgb(255, 144, 163) !important;
+    color: rgb(255, 144, 163) !important;
     border-bottom-color: var(--primary-color);
     font-weight: 600;
 }
@@ -337,35 +349,36 @@ textarea.form-control {
     opacity: 1;
     pointer-events: auto;
 }
+
 /* 필수 스타일 추가 */
 .loading-spinner {
-  /* 기본 박스 스타일 */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  text-align: center;
-  
-  /* 내용 스타일 */
-  font-family: sans-serif;
-  min-width: 200px;
+    /* 기본 박스 스타일 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    /* 내용 스타일 */
+    font-family: sans-serif;
+    min-width: 200px;
 }
 
 .loading-spinner i {
-  font-size: 40px;
-  color: #4361ee;
-  display: block;
-  margin-bottom: 15px;
+    font-size: 40px;
+    color: #4361ee;
+    display: block;
+    margin-bottom: 15px;
 }
 
 .loading-spinner p {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
+    margin: 0;
+    font-size: 16px;
+    color: #333;
 }
 
 
@@ -426,12 +439,12 @@ textarea.form-control {
     .board-tabs {
         padding: 0 10px;
     }
-    
+
     .tab-btn {
         padding: 10px 15px;
         font-size: 0.9rem;
     }
-    
+
     #writeButtonBottom {
         padding: 8px 15px;
         font-size: 0.9rem;
@@ -439,8 +452,15 @@ textarea.form-control {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 반응형 디자인 */
@@ -449,38 +469,56 @@ textarea.form-control {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .post-title {
         margin-bottom: 10px;
     }
-    
+
     .post-meta {
         width: 100%;
         justify-content: space-between;
     }
-    
+
     .post-meta span {
         margin-left: 0;
     }
+
     .post-table {
         font-size: 13px;
     }
-    .post-table th, .post-table td {
+
+    .post-table th,
+    .post-table td {
         padding: 8px 10px;
     }
+
     .post-table .author {
         display: none;
     }
+
     .post-table .title {
         width: 70%;
     }
+
     .post-table .date {
         width: 20%;
     }
-    .post-table .author { display: none; }
-    .post-table .num { width: 15%; }
-    .post-table .title { width: 65%; }
-    .post-table .date { width: 20%; }
+
+    .post-table .author {
+        display: none;
+    }
+
+    .post-table .num {
+        width: 15%;
+    }
+
+    .post-table .title {
+        width: 65%;
+    }
+
+    .post-table .date {
+        width: 20%;
+    }
 }
 
 /* 아코디언 방식용 스타일 */
@@ -491,4 +529,93 @@ textarea.form-control {
 /* 테이블 행 호버 시 커서 변경 */
 .post-table tbody tr {
     cursor: pointer;
+}
+
+
+
+
+
+/* 탭 버튼 */
+/* 게시판 배너 스타일 */
+.board-banner {
+    width: 100%;
+    position: relative;
+    /* 변경: 하위 요소가 넘칠 수 있도록 */
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 배너 이미지 스타일 (기존 유지) */
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 30%;
+}
+
+.banner-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8%;
+    color: white;
+}
+
+.tab-menu-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* 상단 탭 */
+.board-tabs {
+    background: white;
+    border-radius: 5px 5px 0 0;
+    padding: 0 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .tab-menu-container {
+        bottom: -2px;
+        /* ✅ 자연스럽게 딱 맞추기 */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .tab-menu-container {
+        bottom: -2px;
+        /* ✅ 모바일도 일관되게 */
+    }
+
+    .banner-image {
+        padding-bottom: 65%;
+        /* ✅ 탭 삐져나오지 않게 조정 */
+    }
+
+    .tab-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
 }
