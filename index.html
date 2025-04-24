@@ -201,7 +201,10 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
+
+
+    
     <section id="latestPostsSection">
         <h2>공지사항</h2>
         <table id="latestPostsTable">
@@ -460,53 +463,6 @@
         </div>
     </section>
 
-
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyZOKq9jtYpEMQy0_jNfUATEBp7t9GDr4OCxMc9VMCKapB58eCeNOU0tPuFCCBxDq5XWQ/exec';
-
-        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
-    submitBtn.disabled = true;
-    
-    try {
-        const formData = new FormData(form);
-        const response = await fetch(scriptURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                action: 'contact',
-                parameter: Object.fromEntries(formData)
-            })
-        });
-
-        if (!response.ok) throw new Error(`HTTP 오류: ${response.status}`);
-        
-        const data = await response.json();
-        console.log("서버 응답:", data);
-        
-        if (data.result === 'success') {
-            alert('문의가 성공적으로 접수되었습니다!');
-            form.reset();
-        } else {
-            throw new Error(data.error || '서버에서 오류 발생');
-        }
-    } catch (error) {
-        console.error('제출 오류:', error);
-        alert(`문의 제출 실패: ${error.message}`);
-    } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
-});
-    </script>
 
 
 
