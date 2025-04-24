@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4a6bff;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3a56d4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: #333;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #4a6bff;
+    margin: 15px auto 0;
+}
+
+/* 헤더 */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a6bff;
+}
+
+.logo span {
+    color: #ff6b6b;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4a6bff;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 메인 비주얼 */
+.main-visual {
+    background: linear-gradient(135deg, #4a6bff, #6a5acd);
+    color: white;
+    padding: 180px 0 100px;
+    text-align: center;
+}
+
+.main-visual h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s;
+}
+
+.main-visual p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    animation: fadeInUp 1s 0.3s forwards;
+    opacity: 0;
+}
+
+.main-visual .btn {
+    animation: fadeInUp 1s 0.6s forwards;
+    opacity: 0;
+}
+
+/* 프로그램 섹션 */
+.program-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.program-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.program-card-content {
+    padding: 25px;
+}
+
+.program-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #4a6bff;
+}
+
+.program-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* 강사 소개 */
+.teacher-section {
+    padding: 100px 0;
+    background-color: #f5f7ff;
+}
+
+.teachers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.teacher-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.teacher-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #f5f7ff;
+}
+
+.teacher-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.teacher-card .subject {
+    color: #4a6bff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.teacher-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 시간표 */
+.timetable-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timetable th, .timetable td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.timetable th {
+    background-color: #4a6bff;
+    color: white;
+    font-weight: 500;
+}
+
+.timetable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 공지사항 */
+.notice-section {
+    padding: 100px 0;
+    background-color: #f5f7ff;
+}
+
+.notice-list {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.notice-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.notice-item:last-child {
+    border-bottom: none;
+}
+
+.notice-item:hover {
+    background-color: #f9f9f9;
+}
+
+.notice-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notice-title {
+    font-weight: 500;
+}
+
+.notice-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* 문의하기 */
+.contact-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* 푸터 */
+footer {
+    background-color: #2a3547;
+    color: white;
+    padding: 20px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-logo span {
+    color: #ff6b6b;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.footer-contact h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-contact h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #4a6bff;
+}
+
+
+.footer-contact p {
+    color: #bbb;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #4a6bff;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #3a4557;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 0;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    header.hide {
+        transform: translateY(-100%);
+    }
+
+    
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transform: translateY(-150%);
+        transition: transform 0.3s;
+    }
+    .logo{
+        margin-left: 5%;
+    }
+    nav.active {
+        transform: translateY(0);
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 0 0 15px 0;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        margin-right: 10%;
+    }
+    
+    .main-visual {
+        padding: 150px 0 80px;
+    }
+    
+    .main-visual h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    
+    .program-section,
+    .teacher-section,
+    .timetable-section,
+    .notice-section,
+    .contact-section {
+        padding: 70px 0;
+    }
+    
+    .timetable th, .timetable td {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form {
+        padding: 30px 20px;
+    }
+}

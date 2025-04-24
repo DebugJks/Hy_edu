@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/borderStyle.css">
+    <link rel="stylesheet" href="css/indexStyle.css">
+
+
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">에듀<span>스타</span></a>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#program">프로그램</a></li>
+                    <li><a href="#teachers">강사진</a></li>
+                    <li><a href="#timetable">시간표</a></li>
+                    <li><a href="#notice">공지사항</a></li>
+                    <li><a href="#contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- 탭 메뉴를 배너 바로 아래에 추가 -->
+    <!-- <div class="tab-menu-container">
+        <div class="board-tabs">
+            <button class="tab-btn active" data-tab="review">후기 게시판</button>
+            <button class="tab-btn" data-tab="notice">간편문의</button>
+        </div>
+    </div> -->
+<!-- 
+    <style>
+        .page-heading {
+            background-image: url(../hanyangHomePage/assets/images/examples_banner.jpg);
+            position: relative;
+            padding-bottom: 60px;
+            /* 탭 메뉴를 위한 공간 추가 */
+        }
+
+        .tab-menu-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 상단 탭 */
+        .board-tabs {
+            background: white;
+            border-radius: 5px 5px 0 0;
+            padding: 0 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style> -->
+
+<!-- 게시판 배너 섹션 -->
+<section class="board-banner">
+    <div class="banner-image">
+      <img src="게시판-배너-이미지.jpg" alt="게시판 배너">
+      <div class="banner-overlay">
+        <h1>문의 게시판</h1>
+        <p>궁금한 사항을 질문하고 답변을 받아보세요</p>
+      </div>
+    </div>
+  </section>
+<style>
+    /* 게시판 배너 스타일 */
+.board-banner {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.banner-image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%; /* 이미지 비율 조정 (데스크탑) */
+}
+
+.banner-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8%;
+  color: white;
+}
+
+.banner-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  .board-banner {
+    border-radius: 0;
+  }
+  
+  .banner-image {
+    padding-bottom: 50%; /* 모바일에서 더 높은 배너 */
+  }
+  
+  .banner-overlay {
+    padding: 0 5%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .banner-overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .banner-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-image {
+    padding-bottom: 70%; /* 매우 작은 화면에서 더 높은 배너 */
+  }
+  
+  .banner-overlay h1 {
+    font-size: 1.5rem;
+  }
+  
+  .banner-overlay p {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+    <section class="section" style="margin-top: 5%; margin-bottom: 5%;">
+        <!-- 게시판 전환시 로딩 효과 -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>게시글을 불러오는 중입니다...</p>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div class="board-header">
+                <h1><i class="fas fa-clipboard-list"></i> 게시판</h1>
+                <button id="writeButton" class="btn btn-primary"><i class="fas fa-pen"></i> 글쓰기</button>
+            </div>
+
+            <div class="board-body">
+                <!-- 글 작성 폼 -->
+                <div class="write-form" id="postFormContainer">
+                    <form id="postForm">
+                        <!-- 
+                        
+                    -->
+                        <!-- 이거 나중에 리뷰게시판 추가하면 value= 리뷰로 바꿔야함 !!!! -->
+                        <input type="hidden" id="boardType" name="boardType" value="notice">
+                        <div class="form-group">
+                            <label for="title">제목</label>
+                            <input type="text" id="title" name="title" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content">내용</label>
+                            <textarea id="content" name="content" class="form-control" placeholder="연락처는 노출되지 않습니다."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-row" style="display: flex; gap: 15px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="author">작성자</label>
+                                <input type="text" id="author" name="author" class="form-control" required>
+                            </div>
+
+                            <div class="form-group" style="flex: 1;">
+                                <label for="phoneNumber">연락처</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div style="text-align: right; margin-top: 20px;">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> 등록</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 게시글 목록 -->
+                <div class="post-table-container">
+                    <table class="post-table">
+                        <thead>
+                            <tr>
+                                <th class="num">번호</th>
+                                <th class="title">제목</th>
+                                <th class="author">작성자</th>
+                                <th class="date">작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody id="postList">
+                            <!-- 게시글 목록이 여기에 출력됩니다 -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 페이지네이션 -->
+                <ul class="pagination" id="pagination"></ul>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <div class="footer-logo">에듀<span>스타</span></div>
+                    <p>초중등 전문 영어/수학 학원</p>
+                    <p>개별 맞춤형 학습으로 학생들의 잠재력을 최대한 끌어올립니다.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>빠른 링크</h3>
+                    <ul>
+                        <li><a href="#program">프로그램</a></li>
+                        <li><a href="#teachers">강사진</a></li>
+                        <li><a href="#timetable">시간표</a></li>
+                        <li><a href="#notice">공지사항</a></li>
+                        <li><a href="#contact">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>연락처</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 서울시 강남구 학원로 123 에듀스타빌딩 3층</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@edustar.ac.kr</p>
+                    <p><i class="fas fa-clock"></i> 월-금: 14:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 에듀스타 학원. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index_js.js"></script>
+    <script src="js/board.js"></script>
+</body>
+
+</html>
