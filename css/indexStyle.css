@@ -78,13 +78,13 @@ header {
     padding: 20px 0;
 }
 
-.logo {
+header .logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: #4a6bff;
 }
 
-.logo span {
+header .logo span {
     color: #ff6b6b;
 }
 
@@ -105,7 +105,7 @@ nav ul li a:hover {
     color: #4a6bff;
 }
 
-.mobile-menu-btn {
+header .mobile-menu-btn {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
@@ -128,6 +128,7 @@ nav ul li a:hover {
     font-size: 3rem;
     margin-bottom: 20px;
     animation: fadeInUp 1s;
+    text-shadow: -1px 0px pink, 0px 1px pink, 1px 0px pink, 0px -1px pink;
 }
 
 .main-visual p {
@@ -143,97 +144,6 @@ nav ul li a:hover {
     opacity: 0;
 }
 
-/* 프로그램 섹션 */
-.program-section {
-    padding: 100px 0;
-    background-color: white;
-}
-
-.program-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.program-card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.program-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.program-card-content {
-    padding: 25px;
-}
-
-.program-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #4a6bff;
-}
-
-.program-card p {
-    margin-bottom: 20px;
-    color: #666;
-}
-
-/* 강사 소개 */
-.teacher-section {
-    padding: 100px 0;
-    background-color: #f5f7ff;
-}
-
-.teachers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.teacher-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.teacher-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 5px solid #f5f7ff;
-}
-
-.teacher-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.teacher-card .subject {
-    color: #4a6bff;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.teacher-card p {
-    color: #666;
-    font-size: 0.9rem;
-}
 
 /* 시간표 */
 .timetable-section {
@@ -264,47 +174,6 @@ nav ul li a:hover {
     background-color: #f9f9f9;
 }
 
-/* 공지사항 */
-.notice-section {
-    padding: 100px 0;
-    background-color: #f5f7ff;
-}
-
-.notice-list {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.notice-item {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.3s;
-}
-
-.notice-item:last-child {
-    border-bottom: none;
-}
-
-.notice-item:hover {
-    background-color: #f9f9f9;
-}
-
-.notice-item a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.notice-title {
-    font-weight: 500;
-}
-
-.notice-date {
-    color: #999;
-    font-size: 0.9rem;
-}
 
 /* 문의하기 */
 .contact-section {
@@ -446,8 +315,6 @@ footer {
         transform: translateY(-100%);
     }
 
-    
-
     nav {
         position: fixed;
         top: 70px;
@@ -459,9 +326,12 @@ footer {
         transform: translateY(-150%);
         transition: transform 0.3s;
     }
-    .logo{
+    
+    header .logo {
         margin-left: 5%;
+        font-size: 1.6rem;
     }
+    
     nav.active {
         transform: translateY(0);
     }
@@ -474,7 +344,7 @@ footer {
         margin: 0 0 15px 0;
     }
     
-    .mobile-menu-btn {
+    header .mobile-menu-btn {
         display: block;
         margin-right: 10%;
     }
@@ -512,3 +382,215 @@ footer {
         padding: 30px 20px;
     }
 }
+
+
+/* 옆으로 슬라이드 되는 텍스트 */
+.marquee-section {
+    overflow: hidden;
+    background: #ffffff;
+    padding: 1rem 0;
+    border-top: 4px solid #ff4d4d;
+    border-bottom: 4px solid #ff4d4d;
+    position: relative;
+}
+
+.marquee-wrapper {
+    display: flex;
+    width: fit-content;
+}
+
+.marquee {
+    display: flex;
+    animation: scroll-left 30s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    margin-right: 4rem;
+    font-weight: bold;
+    color: #e60000;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #fff5f5;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* 마퀴 내용의 절반만큼 이동 */
+    }
+}
+
+/* 텍스트 이미지  */
+.section-value {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background-color: #ffe8a29e;
+    overflow: hidden;
+  }
+  
+  .section-value .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .text-area {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    min-width: 300px;
+  }
+  
+  .vertical-word {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.45);
+    line-height: 1;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease-out;
+  }
+  
+  .text-content {
+    flex: 1;
+  }
+  
+  .text-content h2 {
+    font-size: 2rem;
+    color: #22223b;
+    margin-bottom: 20px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease-out 0.2s;
+  }
+  
+  .text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a4e69;
+    margin-bottom: 15px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+  
+  .text-content p:nth-child(2) { transition-delay: 0.3s; }
+  .text-content p:nth-child(3) { transition-delay: 0.4s; }
+  .text-content p:nth-child(4) { transition-delay: 0.5s; }
+  
+  .image-stack-area {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .image-stack-area .image-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.8s ease;
+    will-change: transform, opacity;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .image-stack-area .image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 초기 위치 */
+  .image-item:nth-child(1) {
+    transform: translate(10%, -5%) rotate(5deg);
+    z-index: 3;
+  }
+  .image-item:nth-child(2) {
+    transform: translate(-5%, 5%) rotate(-3deg);
+    z-index: 2;
+  }
+  .image-item:nth-child(3) {
+    transform: translate(5%, 10%) rotate(2deg);
+    z-index: 1;
+  }
+  
+  /* 활성화될 때 */
+  .section-value.active .vertical-word,
+  .section-value.active .text-content h2,
+  .section-value.active .text-content p,
+  .section-value.active .image-item {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  
+  /* 이미지 애니메이션 - 펼쳐지기 */
+  .section-value.active .image-item:nth-child(1) {
+    transform: translate(15%, -10%) rotate(3deg);
+  }
+  .section-value.active .image-item:nth-child(2) {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  .section-value.active .image-item:nth-child(3) {
+    transform: translate(-15%, 10%) rotate(-3deg);
+  }
+  
+  /* 마우스 호버 시 추가 펼침 효과 */
+  .image-stack-area:hover .image-item:nth-child(1) {
+    transform: translate(20%, -15%) rotate(5deg);
+  }
+  .image-stack-area:hover .image-item:nth-child(3) {
+    transform: translate(-20%, 15%) rotate(-5deg);
+  }
+  
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .section-value .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .text-area {
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+  
+    .vertical-word {
+      font-size: 2.5rem;
+      transform: none;
+    }
+  
+    .text-content h2 {
+      font-size: 1.5rem;
+    }
+  
+    .text-content p {
+      font-size: 1rem;
+    }
+  
+    .image-stack-area {
+      min-height: 350px;
+      max-width: 90%;
+    }
+  }
+  

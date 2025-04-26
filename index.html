@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>에듀스타 - 초중등 전문 영어/수학 학원</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/indexStyle.css">
-    
-    
+
+
     <!-- board랑 index_js scriptURL 같이 수정해야함 -->
 
 </head>
+
 <body>
     <!-- 헤더 -->
     <header>
@@ -34,88 +36,556 @@
 
 
     <!-- 메인 비주얼 -->
-     <!-- 배너이미지는 스타일에서 수정 -->
+    <!-- 배너이미지는 스타일에서 수정 -->
     <section class="main-visual">
         <div class="container">
-            <h1>초중등 전문 영어/수학 학원</h1>
-            <p>개별 맞춤형 학습으로 학생들의 잠재력을 최대한 끌어올립니다.<br>체계적인 커리큘럼과 경험 많은 강사진이 함께합니다.</p>
-            <a href="#contact" class="btn">무료 상담 신청</a>
+            <h1>질문이 실력을 만들다</h1>
+            <p>학생들의 <a style="background-color: #3a56d5; font-weight: bold;">'질문하는 힘'</a>을 길러<br>스스로 성장하는 힘을 기르는 것을 목표로 합니다.</p>
         </div>
+        <a class="btna" href="#" id="supportBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            상담문의
+        </a>
     </section>
+<style>
+                @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-    <!-- 프로그램 섹션 -->
-    <section class="program-section" id="program">
-        <div class="container">
-            <h2 class="section-title">우리 학원 프로그램</h2>
-            <div class="program-cards">
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="초등 영어 프로그램">
-                    <div class="program-card-content">
-                        <h3>초등 영어</h3>
-                        <p>기초부터 탄탄하게! 재미있는 활동과 체계적인 학습으로 영어에 대한 자신감을 키워줍니다.</p>
-                        <a href="#" class="btn">자세히 보기</a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1509869175650-a1d97972541a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="초등 수학 프로그램">
-                    <div class="program-card-content">
-                        <h3>초등 수학</h3>
-                        <p>개념 이해부터 문제 해결력까지! 논리적 사고력을 기르는 즐거운 수학 수업.</p>
-                        <a href="#" class="btn">자세히 보기</a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="중등 영어 프로그램">
-                    <div class="program-card-content">
-                        <h3>중등 영어</h3>
-                        <p>내신과 수능을 동시에! 체계적인 문법과 독해 훈련으로 실력을 쌓습니다.</p>
-                        <a href="#" class="btn">자세히 보기</a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="중등 수학 프로그램">
-                    <div class="program-card-content">
-                        <h3>중등 수학</h3>
-                        <p>개념 완성부터 고난도 문제까지! 체계적인 학습으로 수학 실력을 향상시킵니다.</p>
-                        <a href="#" class="btn">자세히 보기</a>
-                    </div>
-                </div>
+.btna {
+    position: relative;
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 40px 0;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    margin-top: 15%;
+    font-weight: bold;
+}
+
+.btna:hover {
+    background: #ffffff;
+    color: #050801;
+    box-shadow: 0 0 5px #ffffff,
+        0 0 25px #ffffff,
+        0 0 50px #ffffff,
+        0 0 200px #ffffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.btna:nth-child(1) {
+    filter: hue-rotate(270deg);
+}
+
+.btna:nth-child(2) {
+    filter: hue-rotate(110deg);
+}
+
+.btna span {
+    position: absolute;
+    display: block;
+}
+
+.btna span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ffffff);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fafafa);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #ffffff);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btna {
+        margin-top: 55%;
+        margin-left: 15%;
+    }
+}
+</style>
+
+
+    <section class="marquee-section">
+        <div class="marquee-wrapper">
+            <div class="marquee">
+                <!-- 원본 내용 -->
+                <span>#성적향상</span>
+                <span>#영어</span>
+                <span>#수학</span>
+                <span>#원리이해</span>
+                <span>#주도적학습</span>
+                <span>#흥미유발</span>
+                <span>#공부습관형성</span>
+                <span>#포기하지마</span>
+                <span>#기초부터</span>
+                <span>#쉽고재밌게</span>
+                <span>#엄마도놀란변화</span>
+                <span>#성장하는아이</span>
+                <span>#하위권탈출</span>
+                <span>#소수정예</span>
+                <span>#맞춤수업</span>
+                <span>#1대1피드백</span>
+                <span>#꾸준한관리</span>
+                <span>#자신감회복</span>
+                <span>#매일의성장</span>
+                <span>#학교성적UP</span>
+                <span>#실력UP자신감UP</span>
+
+                <!-- 복제 내용 (원본과 동일) -->
+                <span>#성적향상</span>
+                <span>#영어</span>
+                <span>#수학</span>
+                <span>#원리이해</span>
+                <span>#주도적학습</span>
+                <span>#흥미유발</span>
+                <span>#공부습관형성</span>
+                <span>#포기하지마</span>
+                <span>#기초부터</span>
+                <span>#쉽고재밌게</span>
+                <span>#엄마도놀란변화</span>
+                <span>#성장하는아이</span>
+                <span>#하위권탈출</span>
+                <span>#소수정예</span>
+                <span>#맞춤수업</span>
+                <span>#1대1피드백</span>
+                <span>#꾸준한관리</span>
+                <span>#자신감회복</span>
+                <span>#매일의성장</span>
+                <span>#학교성적UP</span>
+                <span>#실력UP자신감UP</span>
             </div>
         </div>
     </section>
 
-    <!-- 강사 소개 -->
-    <section class="teacher-section" id="teachers">
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- 섹션_1 -->
+    <section class="asymmetrical-section" style="background-image: url('image/Section_1.png');">
         <div class="container">
-            <h2 class="section-title">우리 학원 강사진</h2>
-            <div class="teachers">
-                <div class="teacher-card">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="김영어 강사">
-                    <h3>김영어</h3>
-                    <div class="subject">초등 영어 전문</div>
-                    <p>10년 경력의 초등 영어 전문 강사로 아이들과의 소통을 가장 중요하게 생각합니다.</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="이수학 강사">
-                    <h3>이수학</h3>
-                    <div class="subject">초등 수학 전문</div>
-                    <p>수학이 재미있어지는 강의! 쉽고 명쾌한 설명으로 호평받고 있습니다.</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="박영어 강사">
-                    <h3>박영어</h3>
-                    <div class="subject">중등 영어 전문</div>
-                    <p>체계적인 커리큘럼으로 내신 1등급을 위한 완벽한 준비를 도와드립니다.</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="최수학 강사">
-                    <h3>최수학</h3>
-                    <div class="subject">중등 수학 전문</div>
-                    <p>개념 이해부터 고난도 문제까지! 수학의 핵심을 잡아주는 강의를 제공합니다.</p>
-                </div>
+            <div class="image-left">
+                <img src="image/leftImg.png" class="floating-image">
+            </div>
+
+            <div class="content-center">
+                <h2 class="section-title">수업 그 이상의 교육</h2>
+                <p class="section-description">
+                    우리학원은 머리에 넣기 위한 공부가 아닌<br>
+                    생각하기 위한 공부를 합니다.<br>
+                    ㅇㅅㅇ
+                </p>
+            </div>
+
+            <div class="image-right">
+                <img src="image/rightImg.png" class="floating-image">
             </div>
         </div>
     </section>
+
+    <style>
+        /* 기본 스타일 */
+        .asymmetrical-section {
+            position: relative;
+            padding: 250px 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .asymmetrical-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            z-index: 0;
+        }
+
+        .asymmetrical-section .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        /* 이미지 스타일 */
+        .image-left,
+        .image-right {
+            width: 30%;
+            position: relative;
+        }
+
+        .image-left {
+            align-self: flex-start;
+            /* 왼쪽 이미지를 위로 살짝 올림 */
+            margin-top: -10%;
+        }
+
+        .image-right {
+            align-self: flex-end;
+            /* 오른쪽 이미지를 아래로 살짝 내림 */
+            margin-bottom: -15%;
+        }
+
+        .floating-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .floating-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 중앙 컨텐츠 스타일 */
+        .content-center {
+            width: 35%;
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 992px) {
+                /* .container {
+                flex-direction: column;
+            } */
+
+            .image-left,
+            .image-right,
+            .content-center {
+                width: 100%;
+                margin: 0;
+            }
+
+            .image-left {
+                margin-bottom: 30px;
+            }
+
+            .image-right {
+                margin-top: 30px;
+                order: 3;
+            }
+
+            .content-center {
+                order: 2;
+                margin: 30px 0;
+                padding: 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .asymmetrical-section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+
+
+<!-- 이미지 무한 슬라이드섹션 이미지는 js에서 수정-->
+<section class="infinite-slider-section">
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- 이미지들이 여기에 복제되어 들어갑니다 -->
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* 기본 스타일 */
+    .infinite-slider-section {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 40px 0;
+      background-color: #ffffff;
+    }
+    
+    .slider-container {
+      width: 100%;
+      position: relative;
+    }
+    
+    .slider-track {
+      display: flex;
+      width: max-content;
+      animation: slide 30s linear infinite;
+    }
+    
+    .slider-item {
+      flex: 0 0 auto;
+      width: 350px; /* 이미지 너비 조정 */
+      height: 250px; /* 이미지 높이 조정 */
+      position: relative;
+      margin-right: 0; /* 이미지 사이 간격 0 */
+    }
+    
+    .slider-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* 애니메이션 */
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .slider-item {
+        width: 250px;
+        height: 160px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .slider-item {
+        width: 200px;
+        height: 120px;
+      }
+    }
+  </style>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 이미지 배열 (실제 사용시 이미지 경로로 변경)
+    const images = [
+      'image/sectionSlide_1.png',
+      'image/sectionSlide_2.png',
+      'image/sectionSlide_3.png',
+      'image/sectionSlide_2.png',
+      'image/sectionSlide_3.png'
+    ];
+    
+    const sliderTrack = document.querySelector('.slider-track');
+    
+    // 이미지 요소 생성 함수
+    function createSliderItem(src) {
+      const item = document.createElement('div');
+      item.className = 'slider-item';
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '갤러리 이미지';
+      
+      item.appendChild(img);
+      return item;
+    }
+    
+    // 이미지 복제하여 무한 슬라이드 구현
+    function setupInfiniteSlider() {
+      // 기존 내용 초기화
+      sliderTrack.innerHTML = '';
+      
+      // 원본 이미지 추가
+      images.forEach(img => {
+        sliderTrack.appendChild(createSliderItem(img));
+      });
+      
+      // 복제본 추가 (무한 효과를 위해)
+      images.forEach(img => {
+        sliderTrack.appendChild(createSliderItem(img));
+      });
+    }
+    
+    // 초기 설정
+    setupInfiniteSlider();
+    
+    // 창 크기 변경시 재설정
+    window.addEventListener('resize', function() {
+      setupInfiniteSlider();
+    });
+  });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section-value">
+    <div class="container">
+      <!-- 텍스트 영역 -->
+      <div class="text-area">
+        <div class="vertical-word">VALUE</div>
+        <div class="text-content">
+          <h2>학업의 바람은 작은 온도에서</h2>
+          <p>지구의 바람은 아주 작은 온도 차이에서 시작된다는 것을 아시나요?</p>
+          <p>학업 역시 미묘한 차이에서 변화가 시작됩니다</p>
+          <p>지금의 작은 관심이, 흥미가 큰 성장으로 이어집니다</p>
+        </div>
+      </div>
+  
+      <!-- 이미지 영역 -->
+      <div class="image-stack-area">
+        <div class="image-item" style="z-index: 3;">
+          <img src="image/fold_1.jpg" alt="가치 이미지 1">
+        </div>
+        <div class="image-item" style="z-index: 2;">
+          <img src="image/sectionSlide_1.png" alt="가치 이미지 2">
+        </div>
+        <div class="image-item" style="z-index: 1;">
+          <img src="image/sectionSlide_3.png" alt="가치 이미지 3">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- 시간표 -->
     <section class="timetable-section" id="timetable">
@@ -170,298 +640,584 @@
         </div>
     </section>
 
-    <!-- 공지사항 -->
-
-        <div class="container">
-            <h2 class="section-title">학원 소식</h2>
-            <div class="notice-list">
-                <div class="notice-item">
-                    <a href="#">
-                        <span class="notice-title">2023년 여름방학 특강 안내</span>
-                        <span class="notice-date">2023.06.15</span>
-                    </a>
-                </div>
-                <div class="notice-item">
-                    <a href="#">
-                        <span class="notice-title">중간고사 대비 특강 개설</span>
-                        <span class="notice-date">2023.04.20</span>
-                    </a>
-                </div>
-                <div class="notice-item">
-                    <a href="#">
-                        <span class="notice-title">신규 강사 채용 공고</span>
-                        <span class="notice-date">2023.03.10</span>
-                    </a>
-                </div>
-                <div class="notice-item">
-                    <a href="#">
-                        <span class="notice-title">학원 이벤트 - 신입생 할인</span>
-                        <span class="notice-date">2023.02.05</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    
+
+
     <section id="latestPostsSection">
         <h2>공지사항</h2>
         <table id="latestPostsTable">
-          <tbody></tbody>
+            <tbody></tbody>
         </table>
         <div style="text-align: right; margin-top: 10px;">
-          <a href="board.html" class="more-button">더보기 &raquo;</a>
+            <a href="board.html" class="more-button">더보기 &raquo;</a>
         </div>
-      </section>
-      
-      <style>
+    </section>
+
+    <style>
         #latestPostsSection {
-          padding: 2rem;
-          background: linear-gradient(145deg, #fff9f9, #fff0f5);
-          border-radius: 20px;
-          box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
-          margin: 40px auto;
-          max-width: 860px;
-          font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-          border: 1px solid #ffebee;
-          position: relative;
-          overflow: hidden;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #ffffff, #f8f9ff);
+            border-radius: 24px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 860px;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-      
+
+        #latestPostsSection:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.08),
+                0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
         #latestPostsSection::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 8px;
-          background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4361ee, #3a56d5, #4361ee);
+            opacity: 0.8;
         }
-      
+
         #latestPostsSection h2 {
-          font-size: 1.8rem;
-          margin-bottom: 1.5rem;
-          color: #ff758c;
-          font-weight: 800;
-          padding-left: 16px;
-          position: relative;
-          display: inline-block;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2b2d42;
+            font-weight: 800;
+            padding-left: 20px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
         }
-      
+
         #latestPostsSection h2::before {
-          content: "✨";
-          position: absolute;
-          left: -10px;
-          top: -10px;
-          font-size: 1.2rem;
+            content: "📢";
+            position: absolute;
+            left: -10px;
+            top: -5px;
+            font-size: 1.4rem;
         }
-      
+
         #latestPostsSection h2::after {
-          content: "";
-          position: absolute;
-          bottom: -8px;
-          left: 16px;
-          width: 50px;
-          height: 4px;
-          background: linear-gradient(90deg, #ff9a9e, #fad0c4);
-          border-radius: 2px;
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #4361ee, #3a56d5);
+            border-radius: 2px;
         }
-      
+
         #latestPostsTable {
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0 8px;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
         }
-      
+
         #latestPostsTable tr.post-title {
-          background-color: #ffffff;
-          transition: all 0.3s ease;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(255, 182, 193, 0.1);
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.03),
+                0 1px 2px rgba(0, 0, 0, 0.05);
         }
-      
+
         #latestPostsTable tr.post-title:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(255, 182, 193, 0.2);
-          background-color: #fff9fb;
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.06),
+                0 1px 2px rgba(0, 0, 0, 0.05);
+            background-color: #f8f9ff;
         }
-      
+
         #latestPostsTable td {
-          padding: 1.2rem;
-          font-size: 1.05rem;
-          position: relative;
+            padding: 1.4rem;
+            font-size: 1.05rem;
+            position: relative;
+            transition: all 0.3s ease;
         }
-      
+
         #latestPostsTable td:first-child {
-          border-top-left-radius: 12px;
-          border-bottom-left-radius: 12px;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
         }
-      
+
         #latestPostsTable td:last-child {
-          border-top-right-radius: 12px;
-          border-bottom-right-radius: 12px;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
         }
-      
+
         #latestPostsTable td.title {
-          font-weight: 600;
-          color: #ff758c;
-          padding-left: 20px;
+            font-weight: 600;
+            color: #2b2d42;
+            padding-left: 24px;
         }
-      
+
         #latestPostsTable td.title::before {
-          content: "•";
-          color: #ff9a9e;
-          position: absolute;
-          left: 8px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 1.5rem;
+            content: "•";
+            color: #4361ee;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.8;
         }
-      
+
         #latestPostsTable td.date {
-          color: #ffb7c5;
-          font-size: 0.9rem;
-          white-space: nowrap;
-          text-align: right;
-          font-weight: 500;
+            color: #8d99ae;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            text-align: right;
+            font-weight: 500;
         }
-      
+
         .post-content td {
-          background: #fff9fb;
-          padding: 1.5rem;
-          font-size: 1rem;
-          color: #ff758c;
-          line-height: 1.7;
-          border-radius: 12px;
-          box-shadow: inset 0 0 0 1px #ffebee;
+            background: #f8f9ff;
+            padding: 1.8rem;
+            font-size: 1rem;
+            color: #2b2d42;
+            line-height: 1.7;
+            border-radius: 16px;
+            box-shadow: inset 0 0 0 1px rgba(67, 97, 238, 0.1);
         }
-      
+
         .more-button {
-          margin-top: 1.5rem;
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 12px 24px;
-          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-          color: white;
-          border-radius: 50px;
-          text-decoration: none;
-          font-size: 1rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
-          border: none;
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #4361ee, #3a56d5);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+            border: none;
         }
-      
+
         .more-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(255, 154, 158, 0.4);
-          background: linear-gradient(135deg, #ff8a9e, #fad0c4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+            background: linear-gradient(135deg, #3a56d5, #4361ee);
         }
-      
+
         .more-button::after {
-          content: "→";
-          transition: transform 0.3s ease;
+            content: "→";
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
         }
-      
+
         .more-button:hover::after {
-          transform: translateX(3px);
+            transform: translateX(4px);
         }
-      
+
         /* ✅ 반응형 스타일 */
         @media (max-width: 768px) {
-          #latestPostsSection {
-            padding: 1.5rem;
-            margin: 20px 12px;
-            border-radius: 16px;
-          }
-      
-          #latestPostsSection h2 {
-            font-size: 1.5rem;
-            padding-left: 14px;
-          }
-      
-          #latestPostsTable td {
-            font-size: 0.95rem;
-            padding: 1rem;
-          }
-      
-          #latestPostsTable td.title::before {
-            left: 6px;
-          }
-      
-          #latestPostsTable td.date {
-            text-align: left;
-            font-size: 0.85rem;
-            margin-top: 6px;
-            display: block;
-            color: #ff9a9e;
-          }
-      
-          .post-content td {
-            font-size: 0.92rem;
-            padding: 1.2rem;
-          }
-      
-          .more-button {
-            font-size: 0.9rem;
-            padding: 10px 20px;
-          }
-        }
-      </style>
-    
+            #latestPostsSection {
+                padding: 2rem;
+                margin: 20px 12px;
+                border-radius: 20px;
+            }
 
-    
+            #latestPostsSection h2 {
+                font-size: 1.6rem;
+                padding-left: 18px;
+            }
+
+            #latestPostsTable td {
+                font-size: 0.95rem;
+                padding: 1.2rem;
+            }
+
+            #latestPostsTable td.title::before {
+                left: 8px;
+            }
+
+            #latestPostsTable td.date {
+                text-align: left;
+                font-size: 0.85rem;
+                margin-top: 8px;
+                display: block;
+                color: #8d99ae;
+            }
+
+            .post-content td {
+                font-size: 0.92rem;
+                padding: 1.4rem;
+            }
+
+            .more-button {
+                font-size: 0.9rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+
+
+
     <!-- 문의하기 -->
-    <section class="contact-section" id="contact">
+
+    <section class="contact-section">
         <div class="container">
             <h2 class="section-title">문의하기</h2>
-            <div class="contact-form">
-                <form id="inquiryForm">
+
+            <div class="form-container">
+                <form name="contact-form" class="contact-form">
+                    <!-- 이름 입력 필드 -->
                     <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+                        <div class="input-field floating-label">
+                            <input type="text" name="이름" id="userName" required>
+                            <label for="userName">이름</label>
+                        </div>
                     </div>
+
+                    <!-- 전화번호 입력 필드 -->
                     <div class="form-group">
-                        <label for="phone">연락처</label>
-                        <input type="tel" id="phone" name="phone" placeholder="연락처를 입력해주세요" required>
+                        <div class="input-field floating-label">
+                            <input type="tel" name="연락처" id="phoneNumber" pattern="[0-9]{11}" required>
+                            <label for="phoneNumber">전화번호</label>
+                            <span class="input-hint">※ '-'없이 숫자만 입력해주세요</span>
+                        </div>
                     </div>
+
+                    <!-- 학생 학년 선택 필드 -->
                     <div class="form-group">
-                        <label for="student">학생 학년</label>
-                        <select id="student" name="student" required>
-                            <option value="">학년을 선택해주세요</option>
-                            <option value="초등1">초등 1학년</option>
-                            <option value="초등2">초등 2학년</option>
-                            <option value="초등3">초등 3학년</option>
-                            <option value="초등4">초등 4학년</option>
-                            <option value="초등5">초등 5학년</option>
-                            <option value="초등6">초등 6학년</option>
-                            <option value="중등1">중등 1학년</option>
-                            <option value="중등2">중등 2학년</option>
-                            <option value="중등3">중등 3학년</option>
-                        </select>
+                        <div class="input-field select-wrapper">
+                            <select name="학생_학년" id="grade" required>
+                                <option value="" disabled selected>선택하세요</option>
+                                <option value="초등학교 저학년">초등학교 저학년</option>
+                                <option value="초등학교 고학년">초등학교 고학년</option>
+                                <option value="중학교 1학년">중학교 1학년</option>
+                                <option value="중학교 2학년">중학교 2학년</option>
+                                <option value="중학교 3학년">중학교 3학년</option>
+                            </select>
+                            <label>학생 학년</label>
+                            <div class="select-arrow"></div>
+                        </div>
                     </div>
+
+                    <!-- 관심 과목 선택 필드 -->
                     <div class="form-group">
-                        <label for="interest">관심 과목</label>
-                        <select id="interest" name="interest" required>
-                            <option value="">과목을 선택해주세요</option>
-                            <option value="초등영어">초등 영어</option>
-                            <option value="초등수학">초등 수학</option>
-                            <option value="중등영어">중등 영어</option>
-                            <option value="중등수학">중등 수학</option>
-                            <option value="both">영어+수학</option>
-                        </select>
+                        <div class="input-field select-wrapper">
+                            <select name="관심_과목" id="subject" required>
+                                <option value="" disabled selected>선택하세요</option>
+                                <option value="수학+영어">수학+영어</option>
+                                <option value="영어">영어</option>
+                                <option value="수학">수학</option>
+                                <option value="기타">기타</option>
+                            </select>
+                            <label>관심 과목</label>
+                            <div class="select-arrow"></div>
+                        </div>
                     </div>
+
+                    <!-- 문의내용 입력 필드 -->
                     <div class="form-group">
-                        <label for="message">문의 내용</label>
-                        <textarea id="message" name="message" placeholder="문의 내용을 입력해주세요" required></textarea>
+                        <div class="input-field floating-label textarea-wrapper">
+                            <textarea name="문의내용" id="contents" required></textarea>
+                            <label for="contents">문의내용</label>
+                            <span class="input-hint">※ 문의 내용을 작성해 주세요.</span>
+                        </div>
                     </div>
-                    <button type="submit" class="btn">문의하기</button>
+
+                    <!-- 제출 버튼 -->
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">문의 보내기</span>
+                            <div class="loading-spinner"></div>
+                        </button>
+                    </div>
                 </form>
+
             </div>
         </div>
     </section>
+
+    <style>
+        /* 기본 스타일 */
+        :root {
+            --primary-color: #4361ee;
+            --primary-dark: #3a56d5;
+            --text-color: #2b2d42;
+            --light-text: #8d99ae;
+            --border-color: #e2e8f0;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --error-color: #ef233c;
+            --success-color: #2ec4b6;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+
+        /* 섹션 스타일 */
+        .contact-section {
+            padding: 3rem 0;
+            background-color: var(--background-light);
+            margin-top: 10%;
+        }
+
+        .contact-section .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+            letter-spacing: -0.5px;
+        }
+
+        /* 폼 컨테이너 */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 입력 필드 스타일 */
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .input-field {
+            position: relative;
+        }
+
+        .floating-label {
+            position: relative;
+            padding-top: 12px;
+        }
+
+        .floating-label input,
+        .floating-label textarea {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1rem;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .floating-label textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .floating-label label {
+            position: absolute;
+            left: 0;
+            top: 24px;
+            color: var(--light-text);
+            transition: var(--transition);
+            pointer-events: none;
+            font-size: 1rem;
+        }
+
+        .floating-label input:focus,
+        .floating-label textarea:focus {
+            outline: none;
+            border-bottom-color: var(--primary-color);
+        }
+
+        .floating-label input:focus+label,
+        .floating-label textarea:focus+label,
+        .floating-label input:not(:placeholder-shown)+label,
+        .floating-label textarea:not(:placeholder-shown)+label {
+            top: 0;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .input-hint {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--light-text);
+            margin-top: 8px;
+        }
+
+        /* 셀렉트 박스 스타일 */
+        .select-wrapper {
+            position: relative;
+            padding-top: 12px;
+        }
+
+        .select-wrapper select {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1rem;
+            background: transparent;
+            appearance: none;
+            color: var(--text-color);
+        }
+
+        .select-wrapper select:focus {
+            outline: none;
+            border-bottom-color: var(--primary-color);
+        }
+
+        .select-wrapper label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .select-arrow {
+            position: absolute;
+            right: 0;
+            bottom: 12px;
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid var(--light-text);
+            border-bottom: 2px solid var(--light-text);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        /* 버튼 스타일 */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .loading-spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .learn-more-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .learn-more-btn:hover {
+            background-color: rgba(67, 97, 238, 0.05);
+            border-color: var(--primary-color);
+        }
+
+        .learn-more-btn svg {
+            opacity: 0.7;
+        }
+
+        /* 모바일 반응형 스타일 */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 2rem 0;
+                margin-top: 5%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conta.ct-form {
+                padding: 1.25rem;
+            }
+
+            .floating-label input,
+            .floating-label textarea,
+            .select-wrapper select {
+                font-size: 0.9rem;
+            }
+
+            .submit-btn,
+            .learn-more-btn {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+
+
+
 
 
 
@@ -480,10 +1236,9 @@
 
                 <div class="footer-contact">
                     <h3>연락처</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 서울시 강남구 학원로 123 에듀스타빌딩 3층</p>
-                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
-                    <p><i class="fas fa-envelope"></i> info@edustar.ac.kr</p>
-                    <p><i class="fas fa-clock"></i> 월-금: 14:00 - 22:00</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 인천특별시 서울광역시 학원로 123 에듀스타빌딩 3층</p>
+                    <p><i class="fas fa-phone"></i> 010-5564-6309</p>
+                    <p><i class="fas fa-envelope"></i> E-mail.com</p>
                 </div>
             </div>
             <div class="copyright">
@@ -495,5 +1250,7 @@
 
 
     <script src="js/index_js.js"></script>
+    <script src="js/board.js"></script>
 </body>
+
 </html>

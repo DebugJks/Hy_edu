@@ -2,7 +2,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbyZOKq9jtYpEMQy0_jNfU
 const postsPerPage = 10;
 let currentPage = 1;
 let totalPosts = 0;
-let currentBoardType = 'notice'; //review
+let currentBoardType = 'review'; //review
 
 const writeButton = document.getElementById('writeButton');
 const postFormContainer = document.getElementById('postFormContainer');
@@ -227,3 +227,7 @@ function formatDate(dateString) {
 document.addEventListener('DOMContentLoaded', () => {
     if (tabButtons.length > 0) fetchPosts();
 });
+
+
+
+
