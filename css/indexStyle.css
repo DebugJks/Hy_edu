@@ -120,8 +120,9 @@ header .mobile-menu-btn {
     text-align: center;
     position: center;
 
-    height: 100vh;
-    min-height: 600px; /* 최소 높이 보장 */
+    height: 100vh !important;
+    min-height: 600px;
+    /* 최소 높이 보장 */
 }
 
 .main-visual h1 {
@@ -158,7 +159,8 @@ header .mobile-menu-btn {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.timetable th, .timetable td {
+.timetable th,
+.timetable td {
     padding: 15px;
     text-align: center;
     border: 1px solid #eee;
@@ -289,6 +291,7 @@ footer {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -300,6 +303,7 @@ footer {
     .header-container {
         padding: 15px 0;
     }
+
     header {
         position: fixed;
         top: 0;
@@ -307,10 +311,10 @@ footer {
         width: 100%;
         z-index: 9999;
         background-color: rgba(255, 255, 255, 0.45);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
     }
-    
+
     header.hide {
         transform: translateY(-100%);
     }
@@ -326,45 +330,45 @@ footer {
         transform: translateY(-150%);
         transition: transform 0.3s;
     }
-    
+
     header .logo {
         margin-left: 5%;
         font-size: 1.6rem;
     }
-    
+
     nav.active {
         transform: translateY(0);
     }
-    
+
     nav ul {
         flex-direction: column;
     }
-    
+
     nav ul li {
         margin: 0 0 15px 0;
     }
-    
+
     header .mobile-menu-btn {
         display: block;
         margin-right: 10%;
     }
-    
+
     .main-visual {
         height: 100vh;
         min-height: 500px;
         background-position: 25% top;
         /* padding: 150px 0 80px; */
     }
-    
+
     .main-visual h1 {
         font-size: 2.2rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
         margin-bottom: 40px;
     }
-    
+
     .program-section,
     .teacher-section,
     .timetable-section,
@@ -372,12 +376,13 @@ footer {
     .contact-section {
         padding: 70px 0;
     }
-    
-    .timetable th, .timetable td {
+
+    .timetable th,
+    .timetable td {
         padding: 10px 5px;
         font-size: 0.9rem;
     }
-    
+
     .contact-form {
         padding: 30px 20px;
     }
@@ -420,8 +425,10 @@ footer {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-50%); /* 마퀴 내용의 절반만큼 이동 */
+        transform: translateX(-50%);
+        /* 마퀴 내용의 절반만큼 이동 */
     }
 }
 
@@ -432,9 +439,9 @@ footer {
     padding: 100px 0;
     background-color: #ffe8a29e;
     overflow: hidden;
-  }
-  
-  .section-value .container {
+}
+
+.section-value .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -443,17 +450,17 @@ footer {
     margin: 0 auto;
     padding: 0 20px;
     flex-wrap: wrap;
-  }
-  
-  .text-area {
+}
+
+.text-area {
     flex: 1;
     display: flex;
     align-items: flex-start;
     gap: 20px;
     min-width: 300px;
-  }
-  
-  .vertical-word {
+}
+
+.vertical-word {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-size: 4rem;
@@ -463,22 +470,22 @@ footer {
     transform: translateY(50px);
     opacity: 0;
     transition: all 1s ease-out;
-  }
-  
-  .text-content {
+}
+
+.text-content {
     flex: 1;
-  }
-  
-  .text-content h2 {
+}
+
+.text-content h2 {
     font-size: 2rem;
     color: #22223b;
     margin-bottom: 20px;
     transform: translateY(30px);
     opacity: 0;
     transition: all 0.8s ease-out 0.2s;
-  }
-  
-  .text-content p {
+}
+
+.text-content p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #4a4e69;
@@ -486,111 +493,240 @@ footer {
     transform: translateY(30px);
     opacity: 0;
     transition: all 0.8s ease-out;
-  }
-  
-  .text-content p:nth-child(2) { transition-delay: 0.3s; }
-  .text-content p:nth-child(3) { transition-delay: 0.4s; }
-  .text-content p:nth-child(4) { transition-delay: 0.5s; }
-  
-  .image-stack-area {
+}
+
+.text-content p:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.text-content p:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.text-content p:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+.image-stack-area {
     flex: 1;
     position: relative;
     min-height: 500px;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-  }
-  
-  .image-stack-area .image-item {
+}
+
+.image-stack-area .image-item {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.8s ease;
     will-change: transform, opacity;
     opacity: 0;
     cursor: pointer;
-  }
-  
-  .image-stack-area .image-item img {
+}
+
+.image-stack-area .image-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  /* 초기 위치 */
-  .image-item:nth-child(1) {
+}
+
+/* 초기 위치 */
+.image-item:nth-child(1) {
     transform: translate(10%, -5%) rotate(5deg);
     z-index: 3;
-  }
-  .image-item:nth-child(2) {
+}
+
+.image-item:nth-child(2) {
     transform: translate(-5%, 5%) rotate(-3deg);
     z-index: 2;
-  }
-  .image-item:nth-child(3) {
+}
+
+.image-item:nth-child(3) {
     transform: translate(5%, 10%) rotate(2deg);
     z-index: 1;
-  }
-  
-  /* 활성화될 때 */
-  .section-value.active .vertical-word,
-  .section-value.active .text-content h2,
-  .section-value.active .text-content p,
-  .section-value.active .image-item {
+}
+
+/* 활성화될 때 */
+.section-value.active .vertical-word,
+.section-value.active .text-content h2,
+.section-value.active .text-content p,
+.section-value.active .image-item {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
-  }
-  
-  /* 이미지 애니메이션 - 펼쳐지기 */
-  .section-value.active .image-item:nth-child(1) {
+}
+
+/* 이미지 애니메이션 - 펼쳐지기 */
+.section-value.active .image-item:nth-child(1) {
     transform: translate(15%, -10%) rotate(3deg);
-  }
-  .section-value.active .image-item:nth-child(2) {
+}
+
+.section-value.active .image-item:nth-child(2) {
     transform: translate(0%, 0%) rotate(0deg);
-  }
-  .section-value.active .image-item:nth-child(3) {
+}
+
+.section-value.active .image-item:nth-child(3) {
     transform: translate(-15%, 10%) rotate(-3deg);
-  }
-  
-  /* 마우스 호버 시 추가 펼침 효과 */
-  .image-stack-area:hover .image-item:nth-child(1) {
+}
+
+/* 마우스 호버 시 추가 펼침 효과 */
+.image-stack-area:hover .image-item:nth-child(1) {
     transform: translate(20%, -15%) rotate(5deg);
-  }
-  .image-stack-area:hover .image-item:nth-child(3) {
+}
+
+.image-stack-area:hover .image-item:nth-child(3) {
     transform: translate(-20%, 15%) rotate(-5deg);
-  }
-  
-  /* 모바일 반응형 */
-  @media (max-width: 768px) {
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
     .section-value .container {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .text-area {
-      flex-direction: row;
-      justify-content: center;
-      margin-bottom: 40px;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 40px;
     }
-  
+
     .vertical-word {
-      font-size: 2.5rem;
-      transform: none;
+        font-size: 2.5rem;
+        transform: none;
     }
-  
+
     .text-content h2 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .text-content p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     .image-stack-area {
-      min-height: 350px;
-      max-width: 90%;
+        min-height: 350px;
+        max-width: 90%;
     }
-  }
-  
+}
+
+
+/* 메인 배너 이미지 상담문의 버튼 */
+/* 상담문의 버튼 스타일 */
+.btna {
+    position: relative;
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 40px 0;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    margin-top: 15%;
+    font-weight: bold;
+}
+
+.btna:hover {
+    background: #ffffff;
+    color: #050801;
+    box-shadow: 0 0 5px #ffffff,
+        0 0 25px #ffffff,
+        0 0 50px #ffffff,
+        0 0 200px #ffffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.btna span {
+    position: absolute;
+    display: block;
+}
+
+.btna span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.btna span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ffffff);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.btna span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fafafa);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.btna span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #ffffff);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}

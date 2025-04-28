@@ -40,19 +40,19 @@ window.addEventListener("scroll", () => {
 });
 
 // 섹션 겹친 이미지 펼쳐지는 기능
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const section = document.querySelector('.section-value');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          section.classList.add('active');
-        }
-      });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add('active');
+            }
+        });
     }, { threshold: 0.2 });
-  
+
     observer.observe(section);
-  });
-  
+});
+
 
 // // fade 애니메이션
 // document.addEventListener('DOMContentLoaded', function () {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // 문의접수
-    
+
 const form = document.forms['contact-form'];
 const submitBtn = form.querySelector('.submit-btn');
 
@@ -172,7 +172,7 @@ form.addEventListener('submit', e => {
 
 // 드롭다운 스타일링
 document.querySelectorAll('select').forEach(select => {
-    select.addEventListener('change', function() {
+    select.addEventListener('change', function () {
         if (this.value) {
             this.style.color = '#1e293b';
         } else {
@@ -182,57 +182,57 @@ document.querySelectorAll('select').forEach(select => {
 });
 
 // 공지사항 최신글 5개 불러오기
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const latestPostsTable = document.getElementById('latestPostsTable');
     if (!latestPostsTable) return;
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZOKq9jtYpEMQy0_jNfUATEBp7t9GDr4OCxMc9VMCKapB58eCeNOU0tPuFCCBxDq5XWQ/exec';
-    
+
     function fetchLatestPosts() {
         fetch(`${scriptURL}?boardType=review`)
             .then(response => response.json())
             .then(data => {
                 if (!Array.isArray(data)) throw new Error("데이터 형식 오류");
-                
+
                 // 최신 5개만 선택
                 const latestPosts = data.slice().reverse().slice(0, 5);
-                
+
                 latestPostsTable.innerHTML = '';
-                
+
                 latestPosts.forEach((post, index) => {
                     const row = document.createElement('tr');
                     row.className = 'post-title';
-                    
+
                     const titleCell = document.createElement('td');
                     titleCell.className = 'title';
                     titleCell.textContent = post["제목"] || '제목 없음';
-                    
+
                     const dateCell = document.createElement('td');
                     dateCell.className = 'date';
                     dateCell.textContent = post["작성일"] ? formatDate(post["작성일"]) : '날짜 없음';
-                    
+
                     row.appendChild(titleCell);
                     row.appendChild(dateCell);
-                    
+
                     const contentRow = document.createElement('tr');
                     contentRow.className = 'post-content';
                     contentRow.style.display = 'none';
-                    
+
                     const contentCell = document.createElement('td');
                     contentCell.colSpan = 2;
                     contentCell.innerHTML = `
                         <div style="margin-bottom: 10px; font-weight: 500;">내용</div>
                         <div style="white-space: pre-line;">${post["내용"] || '내용 없음'}</div>
                     `;
-                    
+
                     contentRow.appendChild(contentCell);
-                    
+
                     row.addEventListener('click', () => {
                         const isHidden = contentRow.style.display === 'none';
                         document.querySelectorAll('.post-content').forEach(item => item.style.display = 'none');
                         contentRow.style.display = isHidden ? 'table-row' : 'none';
                     });
-                    
+
                     latestPostsTable.appendChild(row);
                     latestPostsTable.appendChild(contentRow);
                 });
@@ -261,3 +261,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // 초기 로드
     fetchLatestPosts();
 });
+
